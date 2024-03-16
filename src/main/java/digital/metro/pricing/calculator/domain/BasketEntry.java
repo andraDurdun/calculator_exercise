@@ -1,11 +1,15 @@
-package digital.metro.pricing.calculator;
+package digital.metro.pricing.calculator.domain;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 public class BasketEntry {
 
-    private String articleId;
-    private BigDecimal quantity;
+    @NotBlank
+    private final String articleId;
+    @Positive
+    private final BigDecimal quantity;
 
     public BasketEntry(String articleId, BigDecimal quantity) {
         this.articleId = articleId;

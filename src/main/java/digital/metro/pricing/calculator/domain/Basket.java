@@ -1,11 +1,15 @@
-package digital.metro.pricing.calculator;
+package digital.metro.pricing.calculator.domain;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import java.util.Set;
 
 public class Basket {
 
-    private String customerId;
-    private Set<BasketEntry> entries;
+    @NotBlank
+    private final String customerId;
+    @Valid
+    private final Set<BasketEntry> entries;
 
     public Basket(String customerId, Set<BasketEntry> entries) {
         this.customerId = customerId;
